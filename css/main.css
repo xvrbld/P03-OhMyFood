@@ -1,0 +1,14 @@
+.header {
+  background-color: green;
+}
+@media screen and (max-width: 992px) {
+  .header {
+    background-color: yellow;
+  }
+}
+
+body {
+  background-color: red;
+}
+
+/*# sourceMappingURL=main.css.map */

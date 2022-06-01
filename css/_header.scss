@@ -1,0 +1,7 @@
+.header {
+    background-color: $primary;
+    @media screen and (max-width: $breakpoint-tablet)
+    {
+        background-color: yellow;
+    }
+}
