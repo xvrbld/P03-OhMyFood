@@ -1,0 +1,39 @@
+footer {
+  background-color: #444444;
+  color: white;
+  padding: 20px 0 20px 15px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  h2 {
+    font-family: $font-titles;
+    font-weight: 1;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    a {
+      list-style-type: none;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline $primary 3px;
+      }
+    }
+  }
+
+  li {
+    padding-bottom: 10px;
+  }
+
+  i {
+    width: 14px;
+    padding-right: 10px;
+  }
+}

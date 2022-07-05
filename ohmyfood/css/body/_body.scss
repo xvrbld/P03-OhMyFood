@@ -1,0 +1,16 @@
+body {
+  font-family: $font-text;
+
+  .container {
+    max-width: 990px;
+    margin: auto;
+  }
+
+  .guidelines {
+    margin: 0 40px;
+  }
+
+  .restaurants {
+    margin: 0 20px;
+  }
+}

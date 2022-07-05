@@ -1,0 +1,23 @@
+@keyframes homeload {
+  0% {
+    opacity: 0;
+    transform: translateY(52px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hide {
+  100% {
+    visibility: hidden;
+  }
+}

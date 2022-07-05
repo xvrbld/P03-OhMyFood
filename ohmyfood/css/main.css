@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@keyframes homeload {
+  0% {
+    opacity: 0;
+    transform: translateY(52px);
+  }
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes hide {
+  100% {
+    visibility: hidden;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  animation: hide 0s 1.5s forwards;
+}
+.overlay .loader {
+  animation: spin 1s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #9356dc;
+  border-top-color: #9356dc;
+  box-sizing: border-box;
+  height: 20vmin;
+  left: calc(50% - 10vmin);
+  position: fixed;
+  top: calc(50% - 10vmin);
+  width: 20vmin;
+  z-index: 1;
+}
+.overlay .loader:before {
+  animation: spin 2s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #ff79da;
+  border-top-color: #ff79da;
+  box-sizing: border-box;
+  content: "";
+  height: 16vmin;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 16vmin;
+}
+.overlay .loader:after {
+  animation: spin 3s infinite linear;
+  border: solid 2vmin transparent;
+  border-radius: 50%;
+  border-right-color: #99e2d0;
+  border-top-color: #99e2d0;
+  box-sizing: border-box;
+  content: "";
+  height: 12vmin;
+  left: 2vmin;
+  position: absolute;
+  top: 2vmin;
+  width: 12vmin;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+body .container {
+  max-width: 990px;
+  margin: auto;
+}
+body .guidelines {
+  margin: 0 40px;
+}
+body .restaurants {
+  margin: 0 20px;
+}
+
+header {
+  position: relative;
+}
+header .container img {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 40px;
+  padding: 20px 0;
+}
+header .container i {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: larger;
+}
+header .container a {
+  color: inherit;
+}
+
+footer {
+  background-color: #444444;
+  color: white;
+  padding: 20px 0 20px 15px;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+footer h2 {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  font-weight: 1;
+}
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+footer ul a {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
+footer ul a:hover {
+  text-decoration: underline #9356dc 3px;
+}
+footer li {
+  padding-bottom: 10px;
+}
+footer i {
+  width: 14px;
+  padding-right: 10px;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+main .loc-searchbar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: lightgrey;
+}
+main .loc-searchbar i {
+  position: absolute;
+  top: 17px;
+  left: calc(50% - 90px);
+  width: 14px;
+}
+main .loc-searchbar input {
+  border: none;
+  background-color: lightgrey;
+  text-align: center;
+}
+main .loc-searchbar input:focus {
+  outline: none;
+}
+main .loc-searchbar input:focus::placeholder {
+  color: transparent;
+}
+main .loc-searchbar input::placeholder {
+  color: black;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+main .browse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(243, 243, 243);
+  padding-bottom: 50px;
+}
+main .browse h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 0 80px;
+}
+main .browse p {
+  text-align: center;
+  margin-top: 8px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  padding: 0 40px;
+}
+main .browse button {
+  background-image: linear-gradient(to top left, #9356dc 0%, #ff79da 100%);
+  margin: 10px;
+  padding: 15px 25px;
+  text-align: center;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 40px;
+  display: block;
+  border: transparent;
+  box-shadow: 0 5px 10px rgb(194, 194, 194);
+  cursor: pointer;
+  transition: 0.2s opacity ease-in-out;
+}
+main .browse button:hover {
+  opacity: 0.8;
+}
+
+main .guidelines {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+main .guidelines h2 {
+  margin-left: -15px;
+  margin-bottom: 40px;
+}
+main .guidelines ol {
+  margin-left: 0;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+main .guidelines ol button {
+  width: 100%;
+  height: 80px;
+  background: white;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 20px;
+  display: block;
+  border: transparent;
+  box-shadow: 0 5px 10px rgb(226, 226, 226);
+  position: relative;
+  color: black;
+  font-weight: 700;
+}
+main .guidelines ol button:hover {
+  cursor: pointer;
+  background-color: rgba(147, 86, 220, 0.2);
+}
+main .guidelines ol button:hover i {
+  color: #9356dc;
+}
+main .guidelines ol button .name {
+  position: relative;
+}
+main .guidelines ol button .number {
+  position: absolute;
+  top: 25px;
+  left: -15px;
+  width: 20px;
+  height: 20px;
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  padding: 6px 5px 4px 5px;
+}
+main .guidelines ol button i {
+  position: absolute;
+  left: calc(50% - 120px);
+  transition: 0.2s all ease-in-out;
+}
+
+main .restaurants {
+  background: rgb(243, 243, 243);
+  margin: 0;
+  padding: 70px 20px;
+}
+@media screen and (min-width: 900px) {
+  main .restaurants .block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+main .restaurants .card {
+  margin-bottom: 24px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 30px;
+  height: 315px;
+  position: relative;
+  padding-bottom: 10px;
+}
+@media screen and (min-width: 900px) {
+  main .restaurants .card {
+    width: calc(50% - 40px);
+    margin: 20px 20px;
+  }
+}
+main .restaurants .card a {
+  color: inherit;
+  text-decoration: none;
+}
+main .restaurants .card a:hover {
+  opacity: 0.8;
+  transition: 0.2s opacity ease-in-out;
+}
+main .restaurants .card a:hover img {
+  transform: scale(1.1);
+  transition: 0.2s all ease-in-out;
+}
+main .restaurants .card .image {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+}
+main .restaurants .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main .restaurants .card .tag {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #99e2d0;
+  color: #278870;
+  padding: 7px 14px;
+  border-radius: 5px;
+}
+main .restaurants .card .tag p {
+  margin: 0;
+}
+main .restaurants .card i {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  font-size: x-large;
+  cursor: pointer;
+}
+main .restaurants .card i.fa-solid {
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+  background: linear-gradient(to top left, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .restaurants .card i:hover {
+  opacity: 1;
+}
+main .restaurants .card h3 {
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+main .restaurants .card h4 {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+main .background img {
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+}
+
+main .menu .container {
+  background-color: whitesmoke;
+  width: 100%;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  margin-top: -70px;
+  z-index: 1;
+  position: relative;
+}
+main .menu .container .dish:nth-child(2) .smallcard:nth-child(3) {
+  animation-delay: 0.2s !important;
+}
+main .menu .container .dish:nth-child(2) .smallcard:nth-child(4) {
+  animation-delay: 0.3s !important;
+}
+main .menu .container .dish:nth-child(2) .smallcard:nth-child(5) {
+  animation-delay: 0.4s !important;
+}
+main .menu .container .dish:nth-child(2) .smallcard:nth-child(6) {
+  animation-delay: 0.5s !important;
+}
+main .menu .container .dish:nth-child(3) .smallcard:nth-child(3) {
+  animation-delay: 0.6s !important;
+}
+main .menu .container .dish:nth-child(3) .smallcard:nth-child(4) {
+  animation-delay: 0.7s !important;
+}
+main .menu .container .dish:nth-child(3) .smallcard:nth-child(5) {
+  animation-delay: 0.8s !important;
+}
+main .menu .container .dish:nth-child(3) .smallcard:nth-child(6) {
+  animation-delay: 0.9s !important;
+}
+main .menu .container .dish:nth-child(4) .smallcard:nth-child(3) {
+  animation-delay: 1s !important;
+}
+main .menu .container .dish:nth-child(4) .smallcard:nth-child(4) {
+  animation-delay: 1.1s !important;
+}
+main .menu .container .dish:nth-child(4) .smallcard:nth-child(5) {
+  animation-delay: 1.2s !important;
+}
+main .menu .container .dish:nth-child(4) .smallcard:nth-child(6) {
+  animation-delay: 1.3s !important;
+}
+main .menu .container .title {
+  font-family: "Shrikhand", Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .menu .container .title h2 {
+  margin: 20px 20px 20px 30px;
+}
+main .menu .container .title .like {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 30px;
+}
+main .menu .container .title .like i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: x-large;
+  cursor: pointer;
+}
+main .menu .container .title .like i.fa-solid {
+  opacity: 0;
+  transition: 0.2s opacity ease-in-out;
+  background: linear-gradient(to top left, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .menu .container .title .like i:hover {
+  opacity: 1;
+}
+main .menu .container .dish h3 {
+  text-transform: uppercase;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+main .menu .container .dish .line {
+  content: "";
+  height: 4px;
+  background-color: #99e2d0;
+  width: 50px;
+  margin-left: 20px;
+}
+main .menu .container .dish .smallcard {
+  animation: homeload 0.5s linear 0s forwards;
+  margin: 30px 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 12px;
+  border-radius: 15px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+main .menu .container .dish .smallcard .info {
+  width: 100%;
+}
+main .menu .container .dish .smallcard .check {
+  background-color: #99e2d0;
+  height: 100%;
+  min-width: 70px;
+  width: 70px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-right: -70px;
+  transition: 0.2s all ease-in-out;
+}
+main .menu .container .dish .smallcard .check i {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  margin-top: 25px;
+  transform: rotate(90deg);
+}
+main .menu .container .dish .smallcard:hover .check {
+  margin-right: initial;
+}
+main .menu .container .dish .smallcard:hover i {
+  transform: rotate(360deg);
+  transition: transform 0.4s ease-in-out;
+}
+main .menu .container .dish .smallcard h4 {
+  margin: 0;
+  padding: 10px 0 5px 10px;
+}
+main .menu .container .dish .smallcard .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .menu .container .dish .smallcard .flex p {
+  margin: 5px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 0 10px;
+}
+main .menu .container .dish .smallcard .flex .price {
+  padding-right: 20px;
+  font-weight: 700;
+}
+main .menu .container .order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .menu .container .order button {
+  background-image: linear-gradient(to top left, #9356dc 0%, #ff79da 100%);
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding: 15px 50px;
+  text-align: center;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 40px;
+  border: transparent;
+  box-shadow: 0 5px 10px rgb(194, 194, 194);
+  cursor: pointer;
+  transition: 0.2s opacity ease-in-out;
+}
+main .menu .container .order button:hover {
+  opacity: 0.8;
+}
+
+/*# sourceMappingURL=main.css.map */
